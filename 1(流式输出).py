@@ -37,6 +37,7 @@ while True:
     for chunk in completion:
         full_reply += chunk.choices[0].delta.content
         print(chunk.choices[0].delta.content)
-    # 将助手的完整回复添加到对话历史中
     print(f"完整内容为：{full_reply}")
-
+    
+    # 将助手的完整回复添加到对话历史中
+    conversation_history.append({'role': 'assistant', 'content': full_reply})
